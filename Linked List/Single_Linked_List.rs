@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+/// *main for test* ///
+
 // fn main() {
 //     let mut head = _list_from(vec![1, 2, 3, 4, 5]);
 //     _list_traverse(&head, true);
@@ -50,9 +52,7 @@ fn _list_delete_all(head: &mut Option<Box<Node<T>>>,val:i32){
     
 }
 
-fn _list_reverse<T>(mut head: Option<Box<Node<T>>>) -> Option<Box<Node<T>>> {
-    // let mut head_ = Some(Box::new(head.as_ref().unwrap().val));
-    // let mut  head_=Some(head.unwrap().clone());
+fn _list_reverse<T>(mut head: Option<Box<Node<T>>>) -> Option<Box<Node<T>>> {    
     let mut pre_head: Option<Box<Node<T>>> = None;
     while let Some(mut node) = head.take() {
         head = node.next.take();
