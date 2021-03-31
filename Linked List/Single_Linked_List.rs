@@ -4,10 +4,10 @@ use std::fmt::Display;
 
 // fn main() {
 //     let mut head = _list_from(vec![1, 2, 3, 4, 5]);
-//     _list_traverse(&head, true);
+//     _list_traverse(&head);
 //     head = _list_reverse(head);
 // 
-//     _list_traverse(&head, true);
+//     _list_traverse(&head);
 // }
 
 fn _list_from<T>(mut arr: Vec<T>) -> Option<Box<Node<T>>> {
@@ -21,13 +21,11 @@ fn _list_from<T>(mut arr: Vec<T>) -> Option<Box<Node<T>>> {
     head
 }
 
-fn _list_traverse<T: Display>(head: &Option<Box<Node<T>>>, show: bool) {
+fn _list_traverse<T: Display>(head: &Option<Box<Node<T>>>) {
     let mut cnt = 0;
     let mut head_ = head.clone();
-    while let Some(node) = head_ {
-        if show {
-            if node.next.is_none() { print!("{}", &node.val); } else { print!("{} -> ", &node.val); }
-        }
+    while let Some(node) = head_ {        
+        if node.next.is_none() { print!("{}", &node.val); } else { print!("{} -> ", &node.val); }
         cnt += 1;
         head_ = &node.next;
     }
